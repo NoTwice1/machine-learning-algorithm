@@ -90,9 +90,6 @@ class PLSA(object):
             self._maximum()
             print "log likelihood: ", self._log_likelihood()
 
-def read_data():
-    
-
 if __name__ == '__main__':
     a = PLSA()
     a.train_with_EM()
