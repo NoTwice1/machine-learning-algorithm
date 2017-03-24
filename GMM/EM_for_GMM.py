@@ -112,8 +112,8 @@ def iris_data():
     return iris.data
 
 if __name__ == '__main__':
-    # data = read_data()
-    data = iris_data()
+    data = read_data()
+    # data = iris_data()
     a = GMM(data, 3)
     a.EM(20)
     a.cluster()
