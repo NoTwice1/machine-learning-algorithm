@@ -1,4 +1,10 @@
 #coding:utf-8
+
+'''
+实现及原理参考
+http://www.360doc.com/content/13/1124/02/9482_331688889.shtml
+'''
+
 import numpy as np
 from matplotlib import pyplot as plt
 
@@ -17,7 +23,7 @@ class PCA(object):
     def __init__(self, r):
         self.r = r  #降维后的维度
 
-    def transform(self, X):
+    def transform(self, X):  #基于各个特征维度方差最大化，特征之间协方差为0
         '''
         :param data: (n_samples, n_features)
         :return x_r: 降维后的r维数据
