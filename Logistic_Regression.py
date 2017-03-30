@@ -13,8 +13,8 @@ def td_normal(mu, sigma, sample_num):
 
 #生成测试数据
 def generate_traindata():
-    data1 = td_normal(np.array([1,5]), np.array([[2,0.5],[1.5,3]]), 200)
-    data2 = td_normal(np.array([2,3]), np.array([[2,0.5],[1.5,3]]), 200)
+    data1 = td_normal(np.array([1,5]), np.array([[1,1.5],[1.5,3]]), 200)
+    data2 = td_normal(np.array([2,3]), np.array([[1,1.5],[1.5,3]]), 200)    
 
     train_X = np.vstack((data1, data2))
     train_y = np.array([1]*200 + [0]*200).reshape((400,1))   
@@ -118,6 +118,6 @@ if __name__ == '__main__':
     lr = LR()
     lr.fit(train_X, train_y)        
     lr.train_error()    
-    print u"skleanr准确率: ", LogisticRegression().fit(train_X,train_y).score(train_X, train_y)                        
+    print u"sklearn准确率: ", LogisticRegression().fit(train_X,train_y).score(train_X, train_y)                        
 
     lr.plot()
